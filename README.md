@@ -51,3 +51,18 @@ https://developer.twitter.com/en/portal/petition/essential/basic-info
   pip install -r requirements.txt
   ```
 - Una vez tengas el archivo api_data.py listo, intenta ejecutar autentificación.py para asegurarte de que todo funciona correctamente.
+
+# Errores enviando tweets
+## 187 - Status is a duplicate
+- Has intentado mandar un tweet duplicado, intenta mandar otro distinto.
+- Funciones que envian contenido aleatorio como random_media_continuous pueden producir este fallo.
+
+# Error de autentificacion:
+## 401 Unauthorized 
+### 32 - Could not authenticate you
+- Configura correctamente tu api_key y tu api_secret en api_data.py
+- Comprueba que estas trabajando en el entorno virtual del proyecto.
+## 400 Bad Request
+### 215 - Bad Authentication data
+- Configura correctamente tu access_token y tu access_secret en api_data.py
+- Comprueba que estas trabajando en el entorno virtual del proyecto
