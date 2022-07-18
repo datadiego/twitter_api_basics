@@ -1,9 +1,11 @@
 # Uso básico de API Twitter 🐦
  Configuración básica de una cuenta de desarrollo en Twitter y uso básico de la api.
-### El repositorio incluye funciones para
-    Comprobar tus credenciales
-    Mandar tweets con texto
-    Mandar tweets multimedia con o sin texto
+### El repositorio incluye funciones para:
+- Comprobar tus credenciales
+- Mandar tweets con texto
+- Mandar tweets multimedia con o sin texto
+- Mandar un tweet aleatorio de una lista
+- Mandar contenido multimedia aleatorio de una lista
 
 
 # Registrar una cuenta de desarrollo en Twitter:
