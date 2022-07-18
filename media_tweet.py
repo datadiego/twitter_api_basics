@@ -1,4 +1,3 @@
-import tweepy
 from api_data import *
 from autentificacion import autentificar
 
