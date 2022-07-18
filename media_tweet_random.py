@@ -35,4 +35,4 @@ if __name__ == "__main__":
     target_img = choice(files)
     img_path += target_img
     print(img_path)
-    upload_media(api_key, api_secret, access_token, access_secret, img_path)
+    upload_random_media(api_key, api_secret, access_token, access_secret, img_path)
