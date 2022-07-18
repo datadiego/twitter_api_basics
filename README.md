@@ -1,13 +1,50 @@
 # Uso básico de API Twitter 🐦
- Configuración básica de una cuenta de desarrollo en Twitter y uso básico de la api.
-### El repositorio incluye funciones para:
-- Comprobar tus credenciales
-- Mandar tweets con texto
-- Mandar tweets multimedia con o sin texto
-- Mandar un tweet aleatorio de una lista
-- Mandar contenido multimedia aleatorio de una lista
+ Configuración básica de una cuenta de desarrollo en Twitter y uso básico de la api mediante tweepy.
+### El repositorio incluye las siguientes funciones:
+## autentificar(*api_key, api_secret, access_token, access_secret*)
 
+```
+api = autentificar(api_key, api_secret, access_token, access_secret)
+```
+Utiliza esta funcion para comprobar tus credenciales y almacenarlas en un objeto.
 
+## basic_tweet(*api, text*)
+```
+api = autentificar(api_key, api_secret, access_token, access_secret)
+basic_tweet(api, "Hola mundo")
+```
+Enviar tweets con texto
+
+## media_tweet(*api, img_path, text=""*)
+```
+api = autentificar(api_key, api_secret, access_token, access_secret)
+media_tweet(api, "imgs/img_0.png", "TEST")
+```
+Envía tweets multimedia, con texto opcional
+
+## random_basic_tweet(*api, list*)
+```
+tweets = ["TEST", "Probando", "Esto es un tweet", ":)"]
+api = autentificar(api_key, api_secret, access_token, access_secret)
+random_basic_tweet(api, tweets)
+```
+Envia un string aleatorio de una lista
+
+## random_media_tweet(*api, img_path, text=""*)
+```
+img_path = "imgs/"    
+api = autentificar(api_key, api_secret, access_token, access_secret)
+random_media_tweet(api, img_path)
+```
+Enviar contenido multimedia aleatorio de una lista, solo hay que añadir imagenes a la ruta especificada
+## random_media_loop_tweet(*api, minutes, img_path, text=""*)
+```
+img_path = "imgs/"
+api = autentificar(api_key, api_secret, access_token, access_secret)
+random_media_loop_tweet(api, 30, img_path)
+```
+Mandar contenido multimedia aleatorio de manera continuada, en el ejemplo, cada 30 minutos
+  
 # Registrar una cuenta de desarrollo en Twitter:
 - Si vas a crear un bot con una cuenta de twitter nueva, deslogeate antes de todas tus cuentas activas en twitter.
 - Entra aqui https://twitter.com/i/flow/signup y registrate.
