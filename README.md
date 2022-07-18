@@ -28,3 +28,24 @@ https://developer.twitter.com/en/portal/petition/essential/basic-info
 - Haz click en "Generate" dentro de "Access Token and Secret", esto nos dará nuestros dos ultimos tokens necesarios, guardalos en api_data.py
 
 ¡Listo! Ya tienes todo lo necesario para interactuar con la API de twitter🙂
+
+# Usando el repositorio:
+- Clona el repositorio a tu PC:
+  ````
+  git clone https://github.com/datadiego/twitter_api_basics.git
+- Crea un entorno virtual en el directorio del proyecto:
+  ```
+  python -m venv env
+  ```
+- Activa el entorno virtual
+  ```
+  #Windows
+  .\env\Scripts\activate
+
+  #Mac/Linux:
+  source ./env/bin/activate
+- Instala dependencias:
+  ```
+  pip install -r requirements.txt
+  ```
+- Una vez tengas el archivo api_data.py listo, intenta ejecutar autentificación.py para asegurarte de que todo funciona correctamente.
