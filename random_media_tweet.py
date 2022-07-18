@@ -6,7 +6,7 @@ import datetime
 from api_data import *
 from autentificacion import autentificar
 
-def upload_random_media(api, img_path, text=""):
+def random_media_tweet(api, img_path, text=""):
     
     '''
     Esta funcion manda una imagen aleatoria de una carpeta y opcionalmente un texto
@@ -27,4 +27,4 @@ def upload_random_media(api, img_path, text=""):
 if __name__ == "__main__":
     img_path = "imgs/"    
     api = autentificar(api_key, api_secret, access_token, access_secret)
-    upload_random_media(api, img_path)
+    random_media_tweet(api, img_path)

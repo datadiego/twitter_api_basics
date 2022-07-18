@@ -5,7 +5,7 @@ from api_data import *
 
 from autentificacion import autentificar
 
-def upload_cont_random_media(api, minutes, img_path, text=""):
+def random_media_loop_tweet(api, minutes, img_path, text=""):
     '''
     Esta funcion manda imagenes y opcionalmente un texto de manera periódica, ajusta el tiempo entre tweets mediante el parametro "minutes"
 
@@ -29,4 +29,4 @@ def upload_cont_random_media(api, minutes, img_path, text=""):
 if __name__ == "__main__":
     img_path = "imgs/"
     api = autentificar(api_key, api_secret, access_token, access_secret)
-    upload_cont_random_media(api, 2, img_path)
+    random_media_loop_tweet(api, 2, img_path)

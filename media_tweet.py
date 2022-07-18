@@ -1,7 +1,7 @@
 from api_data import *
 from autentificacion import autentificar
 
-def upload_media(api, img_path, text=""):
+def media_tweet(api, img_path, text=""):
     
     '''
     Esta funcion manda una imagen y opcionalmente un texto
@@ -16,4 +16,4 @@ def upload_media(api, img_path, text=""):
 
 if __name__ == "__main__":
     api = autentificar(api_key, api_secret, access_token, access_secret)
-    upload_media(api, "imgs/img_0.png", "TEST")
+    media_tweet(api, "imgs/img_0.png", "TEST")

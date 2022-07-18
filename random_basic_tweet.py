@@ -2,7 +2,7 @@ import datetime
 from random import choice
 from api_data import *
 from autentificacion import autentificar
-def create_tweet(api, list):
+def random_basic_tweet(api, list):
     '''
     Esta funcion manda un tweet con el texto introducido
 
@@ -18,4 +18,4 @@ def create_tweet(api, list):
 if __name__ == "__main__":
     tweets = ["000", "001", "002", "003"]
     api = autentificar(api_key, api_secret, access_token, access_secret)
-    create_tweet(api, tweets)
+    random_basic_tweet(api, tweets)
