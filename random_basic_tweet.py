@@ -1,25 +1,21 @@
-import tweepy, datetime
+import datetime
 from random import choice
 from api_data import *
 from autentificacion import autentificar
-def create_tweet(api_key, api_secret, access_token, access_secret, list):
+def create_tweet(api, list):
     '''
     Esta funcion manda un tweet con el texto introducido
 
     Parámetros
-    text: Mensaje a twittear
-    api_key: Token generado por twitter
-    api_secret: Token generado por twitter
-    access_token: Token generado por twitter
-    access_secret: Token generado por twitter
+    api: Objeto devuelto por <autentificar>
+    list: Lista de strings con los tweets a enviar
     '''
-    text = choice(list)
-    api = autentificar(api_key, api_secret, access_token, access_secret)
-    #Mandar tweet
+    text = choice(list) 
     api.update_status(text)
     ahora = datetime.datetime.now()
-    print("Tweet enviado a las", ahora)
+    print(f"Tweet enviado: {text} a las {ahora}")
 
 if __name__ == "__main__":
     tweets = ["000", "001", "002", "003"]
-    create_tweet(api_key, api_secret, access_token, access_secret, tweets)
+    api = autentificar(api_key, api_secret, access_token, access_secret)
+    create_tweet(api, tweets)
