@@ -26,4 +26,4 @@ def upload_media(api_key, api_secret, access_token, access_secret, img_path, tex
     print("Tweet enviado")      
 
 if __name__ == "__main__":
-    upload_media("imgs/img_0.png", api_key, api_secret, access_token, access_secret, "TEST")
+    upload_media( api_key, api_secret, access_token, access_secret, "imgs/img_0.png", "TEST")
