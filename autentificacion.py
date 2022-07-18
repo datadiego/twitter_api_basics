@@ -19,8 +19,8 @@ def autentificar(api_key, api_secret, access_token, access_secret):
         api.verify_credentials()
         print('Autentificación exitosa')
         return api     
-    except:
-        print('Autentificación fallida')
+    except Exception as error:
+        print(f'Autentificación fallida {error}')
 
 if __name__ == "__main__":
     autentificar(api_key, api_secret, access_token, access_secret)
