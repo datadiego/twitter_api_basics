@@ -1,7 +1,7 @@
 import tweepy, datetime
 from api_data import *
 
-def create_tweet(text, api_key, api_secret, access_token, access_secret):
+def create_tweet(api_key, api_secret, access_token, access_secret, text):
     '''
     Esta funcion manda un tweet con el texto introducido
 
