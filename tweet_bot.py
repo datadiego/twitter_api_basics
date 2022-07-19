@@ -1,5 +1,5 @@
-import os
-from random import choice
+import os, json
+from random import choice, randint
 from datetime import datetime
 from api_data import api_key, api_secret, access_token, access_secret
 from autentificacion import autentificar
@@ -12,14 +12,14 @@ class Tweet_bot:
         self.access_token = access_token
         self.access_secret = access_secret
         self.client = self.autentificar(self.api_key, self.api_secret, self.access_token, self.access_secret)
-        self.client.verify_credentials()
         self.twitter_user = self.client.get_user(screen_name="infolepsy20k")
         self.id = self.twitter_user.id
         self.name = self.twitter_user.name
         self.texts_to_send = []
         self.muestra_info()
+        
 
-    def add_texts(self, list):
+    def add_texts_to_send(self, list):
         for element in list:
             self.texts_to_send.append(element)
     
@@ -45,7 +45,7 @@ class Tweet_bot:
             return api     
         except Exception as error:
             print(f'Autentificación fallida {error}')
-
+    
     def get_last_tweet(self):
         tweet = self.client.user_timeline(count = 1)[0]
         print(f"Último tweet enviado: {tweet.text}")
@@ -73,11 +73,14 @@ class Tweet_bot:
 
     def delete_all_tweets(self):
         loop = True
+        contador = 0
         while loop:
             try:
                 bot.delete_last_tweet()
+                contador += 1
             except IndexError:
                 loop = False
+                print(f"Borrados {contador} tweets")
 
     def get_tweets(self, amount):
         count = 0
@@ -119,11 +122,11 @@ class Tweet_bot:
         self.client.update_status(text, media_ids=[media.media_id_string])
         ahora = datetime.now()
         print(f"Imagen enviada: {target_img} a las {ahora}")
+    
+    def send_random_text(self):
+        index = randint(0, len(self.texts_to_send))
+        target_text = self.texts_to_send.pop(index)
+        self.send_tweet(target_text)
         
-
-
-
 if __name__ == "__main__":
     bot = Tweet_bot(api_key, api_secret, access_token, access_secret)
-    bot.delete_all_tweets()
-    
