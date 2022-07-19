@@ -2,7 +2,6 @@ import os, time
 from random import choice, randint
 from datetime import datetime
 from api_data import api_key, api_secret, access_token, access_secret
-from autentificacion import autentificar
 import tweepy
 
 class Tweet_bot:
