@@ -61,7 +61,8 @@ https://developer.twitter.com/en/portal/petition/essential/basic-info
   ```
   pip install -r requirements.txt
   ```
-- Una vez tengas el archivo api_data.py listo, intenta ejecutar autentificación.py para asegurarte de que todo funciona correctamente.
+- Una vez tengas el archivo api_data.py listo puedes copiarlo en la carpeta de tutorial para empezar por las funciones básicas, o dejarlo en la carpeta raiz para usar el bot 
+- Intenta ejecutar tutorial/autentificación.py para asegurarte de que todo funciona correctamente.
 
 # Errores enviando tweets
 ## 187 - Status is a duplicate
