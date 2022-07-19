@@ -50,14 +50,32 @@ class Tweet_bot:
 
     def get_last_tweet_id(self):
         tweet = self.client.user_timeline(count = 1)[0]
-        print(f"ID del último tweet enviado: {tweet.id}")
+        print(f"ID tweet enviado: {tweet.id}")
         return tweet.id
     
     def delete_last_tweet(self):
         last_tweet_id = self.get_last_tweet_id()
+        last_tweet = self.get_last_tweet()
         self.client.destroy_status(last_tweet_id)
-        print("Ultimo tweet eliminado")
+        print(f"Tweet eliminado: {last_tweet}")
     
+    def delete_tweets(self, amount):
+        tweets_id = self.get_tweets_id(amount)
+        tweets = self.get_tweets(amount)
+        for index, id  in enumerate(tweets_id):
+            print(f"Eliminado tweet: {tweets[index].text}")
+            self.client.destroy_status(id)
+            
+        print(f"Tweets eliminados: {amount}")
+
+    def delete_all_tweets(self):
+        loop = True
+        while loop:
+            try:
+                bot.delete_last_tweet()
+            except IndexError:
+                loop = False
+
     def get_tweets(self, amount):
         count = 0
         last_tweets = []
@@ -83,4 +101,5 @@ class Tweet_bot:
 
 if __name__ == "__main__":
     bot = Tweet_bot(api_key, api_secret, access_token, access_secret)
-    bot.get_tweets(3)
+    bot.get_last_tweet()
+    
