@@ -104,8 +104,13 @@ class Tweet_bot:
         ahora = datetime.now()
         print(f"Tweet: {text}, enviado a las {ahora}")
 
+    def send_media(self, media_path, text=""):
+        media = self.client.media_upload(media_path)
+        self.client.update_status(text, media_ids=[media.media_id_string])
+        print("Tweet enviado")
+
 
 if __name__ == "__main__":
     bot = Tweet_bot(api_key, api_secret, access_token, access_secret)
-    bot.send_tweet(":)")
+    bot.send_media("imgs/img_0.png")
     
