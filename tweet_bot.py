@@ -1,3 +1,4 @@
+from datetime import datetime
 from api_data import api_key, api_secret, access_token, access_secret
 from autentificacion import autentificar
 import tweepy
@@ -97,9 +98,14 @@ class Tweet_bot:
         print(f"ID's de los ultimos {amount} tweets:")
         print(last_tweets)
         return last_tweets
+    
+    def send_tweet(self, text):
+        self.client.update_status(text)
+        ahora = datetime.now()
+        print(f"Tweet: {text}, enviado a las {ahora}")
 
 
 if __name__ == "__main__":
     bot = Tweet_bot(api_key, api_secret, access_token, access_secret)
-    bot.get_last_tweet()
+    bot.send_tweet(":)")
     
