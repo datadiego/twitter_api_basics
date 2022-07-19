@@ -2,22 +2,29 @@
 
  Este repositorio sirve como guía de inicio para usar la API de twitter y comenzar a automatizar tareas mediante tweepy
 
- Incluye funciones para autentificar tus credenciales o mandar tweets automatizados de manera simple y entender como funciona la API, una guía para configurar tu cuenta de desarrollador en twitter y una clase (tweet_bot.py) con las siguientes funciones:
+Para comenzar a usar la API:
+- Clona e instala el repositorio, localiza el archivo api_data_template.py en resources.
+- Registra una cuenta de desarrollo en Twitter.
+- Guarda tus claves en api_data_template.py y renombra el archivo a api_data.py.
+- Lanza el script authenticate.py y comprueba que tus credenciales son correctas.
+
+ La libreria contiene funciones para autentificar tus credenciales o mandar tweets automatizados de manera simple y entender como funciona la API en la carpeta resources, una guía para crear y configurar tu cuenta de desarrollador en twitter y una clase (tweet_bot.py) con las siguientes funciones:
  
- - authenticate(*self, api_key, api_secret, access_token, access_secret*): Verifica tus credenciales para interactuar con la API
-- show_info(): muestra información sobre tu perfil
-- get_last_tweet(): captura el ultimo tweet enviado
-- get_last_tweet_id(): captura el id del ultimo tweet enviado
-- delete_last_tweet(): elimina el ultimo tweet enviado
-- delete_tweets(*amount*): elimina varios tweets empezando desde el ultimo enviado
-- delete_all_tweets(): elimina todos los tweets de la cuenta
-- get_tweets(*amount*): captura varios de tus ultimos tweets enviados
-- get_tweets_id(*amount*): captura varios ids de tus tweets empezando desde el ultimo
-- send_media(*media_path, text*): envia archivos multimedia, con texto opcional
-- send_random_media(*self, media_path, text*): envia archivos aleatorios multimedia desde un directorio
-- add_texts_to_send(*list*): almacena una lista de textos para poder mandarlos en los modos aleatorios
-- send_random_text(): envía un texto aleatorio de la lista
-- send_random_media_period(*minutes, img_path, text*): envía archivos multimedia aleatorios de manera periodica, en minutos
+- authenticate(*self, api_key, api_secret, access_token, access_secret*): Verifica tus credenciales para interactuar con la API.
+- show_info(): muestra información sobre tu perfil.
+- get_last_tweet(): captura el ultimo tweet enviado.
+- get_last_tweet_id(): captura el id del ultimo tweet enviado.
+- delete_last_tweet(): elimina el ultimo tweet enviado.
+- delete_tweets(*amount*): elimina varios tweets empezando desde el ultimo enviado.
+- delete_all_tweets(): elimina todos los tweets de la cuenta.
+- get_tweets(*amount*): captura varios de tus ultimos tweets enviados.
+- get_tweets_id(*amount*): captura varios ids de tus tweets empezando desde el ultimo.
+- send_media(*media_path, text*): envia archivos multimedia, con texto opcional.
+- send_random_media(*self, media_path, text*): envia archivos aleatorios multimedia desde un directorio.
+- add_texts_to_send(*list*): almacena una lista de textos para poder mandarlos en los modos aleatorios.
+- send_random_text(): envía un texto aleatorio de la lista.
+- send_random_media_period(*minutes, img_path, text*): envía archivos multimedia aleatorios de manera periodica, en minutos.
+
   
 # Registrar una cuenta de desarrollo en Twitter:
 - Si vas a crear un bot con una cuenta de twitter nueva, deslogeate antes de todas tus cuentas activas en twitter.
@@ -28,21 +35,21 @@ https://twitter.com/settings/phone
 https://developer.twitter.com/en/portal/petition/essential/basic-info
 - Completa el registro 
 - Acepta los terminos y condiciones
-- Una vez completes la confirmación en el email que te mandan, te redirigirán aqui: ![tutorial0](tutorial/imgs/tutorial0.png)
+- Una vez completes la confirmación en el email que te mandan, te redirigirán aqui: ![tutorial0](resources/imgs/tutorial0.png)
 - Introduce el nombre de tu bot y continúa
-- Recibirás tres tokens, guardalos en api_data.py: ![tutorial1](tutorial/imgs/tutorial1.png)
+- Recibirás tres tokens, guardalos en api_data.py: ![tutorial1](resources/imgs/tutorial1.png)
 - Haz click aqui: https://developer.twitter.com/en/portal/petition/standard/basic-info
 - Rellena la información que te piden, añade una descripcion sobre el bot que vas a crear y completa todo el proceso de registro.
-- Si todo ha ido bien, recibiras un aviso:![tutorial2](tutorial/imgs/tutorial2.png)
+- Si todo ha ido bien, recibiras un aviso:![tutorial2](resources/imgs/tutorial2.png)
 - Haz click aqui: https://developer.twitter.com/en/portal/projects/1549054564472602625/apps/24894540/auth-settings
-- Habilita OAuth 1.0a y da permisos a tu aplicación para leer y escribir tweets y mensajes directos: ![tutorial3](tutorial/imgs/tutorial3.png)
+- Habilita OAuth 1.0a y da permisos a tu aplicación para leer y escribir tweets y mensajes directos: ![tutorial3](resources/imgs/tutorial3.png)
 - Añade una URL callback y de website (cualquier url vale) y haz click en enviar.
 - Haz click aqui: https://developer.twitter.com/en/portal/projects/1549054564472602625/apps/24894540/keys
 - Haz click en "Generate" dentro de "Access Token and Secret", esto nos dará nuestros dos ultimos tokens necesarios, guardalos en api_data.py
 
 ¡Listo! Ya tienes todo lo necesario para interactuar con la API de twitter🙂
 
-# Usando el repositorio:
+# Instalando el repositorio:
 - Clona el repositorio a tu PC:
   ````
   git clone https://github.com/datadiego/twitter_api_basics.git
