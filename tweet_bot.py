@@ -1,4 +1,4 @@
-import os, json
+import os, time
 from random import choice, randint
 from datetime import datetime
 from api_data import api_key, api_secret, access_token, access_secret
@@ -127,6 +127,23 @@ class Tweet_bot:
         index = randint(0, len(self.texts_to_send))
         target_text = self.texts_to_send.pop(index)
         self.send_tweet(target_text)
+
+    def send_random_media_period(self, minutes, img_path, text=""):
+        minutes *= 60
+        files = os.listdir(img_path)
+        busy = True
+        while busy:
+            target_img = choice(files)
+            img = img_path+target_img
+            media = self.client.media_upload(img)
+            self.client.update_status(text, media_ids=[media.media_id_string])
+            ahora = datetime.now()
+            print(f"Imagen: {target_img} y texto: {text} enviados a las {ahora}")
+            print("Esperando...")
+            time.sleep(minutes)
+
         
 if __name__ == "__main__":
+    img_path = "imgs/"
     bot = Tweet_bot(api_key, api_secret, access_token, access_secret)
+    bot.send_random_media_period(2, img_path, "TEST")
