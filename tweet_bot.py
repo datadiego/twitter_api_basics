@@ -1,7 +1,7 @@
 import os, time
 from random import choice, randint
 from datetime import datetime
-from api_data import api_key, api_secret, access_token, access_secret
+from resources.api_data import api_key, api_secret, access_token, access_secret
 import tweepy
 
 class Tweet_bot:
