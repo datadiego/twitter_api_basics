@@ -53,8 +53,9 @@ random_media_tweet(api, img_path)
 Mandar contenido multimedia aleatorio de manera continuada cada 30 minutos
 
 img_path = "imgs/"
+minutos_entre_tweets = 30
 api = autentificar(api_key, api_secret, access_token, access_secret)
-random_media_loop_tweet(api, 30, img_path)
+random_media_loop_tweet(api, minutos_entre_tweets, img_path)
 ```
 
   
