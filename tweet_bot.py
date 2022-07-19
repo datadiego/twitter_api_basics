@@ -1,3 +1,5 @@
+import os
+from random import choice
 from datetime import datetime
 from api_data import api_key, api_secret, access_token, access_secret
 from autentificacion import autentificar
@@ -108,9 +110,20 @@ class Tweet_bot:
         media = self.client.media_upload(media_path)
         self.client.update_status(text, media_ids=[media.media_id_string])
         print("Tweet enviado")
+    
+    def send_random_media(self, media_path, text=""):
+        files = os.listdir(media_path)
+        target_img = choice(files)
+        img = media_path+target_img
+        media = self.client.media_upload(img)
+        self.client.update_status(text, media_ids=[media.media_id_string])
+        ahora = datetime.now()
+        print(f"Imagen enviada: {target_img} a las {ahora}")
+        
+
 
 
 if __name__ == "__main__":
     bot = Tweet_bot(api_key, api_secret, access_token, access_secret)
-    bot.send_media("imgs/img_0.png")
+    bot.delete_all_tweets()
     
