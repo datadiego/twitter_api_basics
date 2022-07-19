@@ -11,22 +11,22 @@ class Tweet_bot:
         self.api_secret = api_secret
         self.access_token = access_token
         self.access_secret = access_secret
-        self.client = self.autentificar(self.api_key, self.api_secret, self.access_token, self.access_secret)
+        self.client = self.authenticate(self.api_key, self.api_secret, self.access_token, self.access_secret)
         self.twitter_user = self.client.get_user(screen_name="infolepsy20k")
         self.id = self.twitter_user.id
         self.name = self.twitter_user.name
         self.texts_to_send = []
-        self.muestra_info()
+        self.show_info()
         
 
     def add_texts_to_send(self, list):
         for element in list:
             self.texts_to_send.append(element)
     
-    def muestra_info(self):
+    def show_info(self):
         print(f"Sesión iniciada como @{self.name}\nID de usuario: {self.id}")    
     
-    def autentificar(self, api_key, api_secret, access_token, access_secret):
+    def authenticate(self, api_key, api_secret, access_token, access_secret):
         """
         Esta funcion verifica tus credenciales en la API de twitter.
 
