@@ -2,62 +2,22 @@
 
  Este repositorio sirve como guía de inicio para usar la API de twitter y comenzar a automatizar tareas mediante tweepy
 
- Incluye funciones para autentificar tus credenciales o mandar tweets automatizados de manera simple, ademas de una guía para configurar tu cuenta de desarrollador en twitter.
-# El repositorio incluye las siguientes funciones:
-## autentificar(*api_key, api_secret, access_token, access_secret*)
-
-```
-#Comprueba tus credenciales, guardalas en un objeto para interactuar con la API
-
-api = autentificar(api_key, api_secret, access_token, access_secret)
-```
-
-## basic_tweet(*api, text*)
-```
-#Envía tweets
-
-api = autentificar(api_key, api_secret, access_token, access_secret)
-basic_tweet(api, "Hola mundo")
-```
-
-
-## media_tweet(*api, img_path, text=""*)
-```
-#Envía tweets multimedia, con texto opcional
-
-api = autentificar(api_key, api_secret, access_token, access_secret)
-media_tweet(api, "imgs/img_0.png", "TEST")
-```
-
-## random_basic_tweet(*api, list*)
-```
-#Envía un string aleatorio de una lista
-
-tweets = ["TEST", "Probando", "Esto es un tweet", ":)"]
-api = autentificar(api_key, api_secret, access_token, access_secret)
-random_basic_tweet(api, tweets)
-```
-
-
-## random_media_tweet(*api, img_path, text=""*)
-```
-#Envía contenido multimedia aleatorio de una lista, solo hay que añadir imagenes a la ruta especificada
-
-img_path = "imgs/"    
-api = autentificar(api_key, api_secret, access_token, access_secret)
-random_media_tweet(api, img_path)
-```
-
-## random_media_loop_tweet(*api, minutes, img_path, text=""*)
-```
-Mandar contenido multimedia aleatorio de manera continuada cada 30 minutos
-
-img_path = "imgs/"
-minutos_entre_tweets = 30
-api = autentificar(api_key, api_secret, access_token, access_secret)
-random_media_loop_tweet(api, minutos_entre_tweets, img_path)
-```
-
+ Incluye funciones para autentificar tus credenciales o mandar tweets automatizados de manera simple y entender como funciona la API, una guía para configurar tu cuenta de desarrollador en twitter y una clase (tweet_bot.py) con las siguientes funciones:
+ 
+ - authenticate(*self, api_key, api_secret, access_token, access_secret*): Verifica tus credenciales para interactuar con la API
+- show_info(): muestra información sobre tu perfil
+- get_last_tweet(): captura el ultimo tweet enviado
+- get_last_tweet_id(): captura el id del ultimo tweet enviado
+- delete_last_tweet(): elimina el ultimo tweet enviado
+- delete_tweets(*amount*): elimina varios tweets empezando desde el ultimo enviado
+- delete_all_tweets(): elimina todos los tweets de la cuenta
+- get_tweets(*amount*): captura varios de tus ultimos tweets enviados
+- get_tweets_id(*amount*): captura varios ids de tus tweets empezando desde el ultimo
+- send_media(*media_path, text*): envia archivos multimedia, con texto opcional
+- send_random_media(*self, media_path, text*): envia archivos aleatorios multimedia desde un directorio
+- add_texts_to_send(*list*): almacena una lista de textos para poder mandarlos en los modos aleatorios
+- send_random_text(): envía un texto aleatorio de la lista
+- send_random_media_period(*minutes, img_path, text*): envía archivos multimedia aleatorios de manera periodica, en minutos
   
 # Registrar una cuenta de desarrollo en Twitter:
 - Si vas a crear un bot con una cuenta de twitter nueva, deslogeate antes de todas tus cuentas activas en twitter.
