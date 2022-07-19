@@ -1,4 +1,4 @@
-from api_data import *
+from api_data import api_key, api_secret, access_token, access_secret
 import tweepy
 
 def autentificar(api_key, api_secret, access_token, access_secret):
