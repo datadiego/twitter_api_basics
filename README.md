@@ -67,7 +67,13 @@ https://developer.twitter.com/en/portal/petition/essential/basic-info
 - Haz click en `🔑Keys and Tokens` dentro del portal de desarrollo: https://developer.twitter.com/en/portal/dashboard
 - Haz click en `Generate` dentro de `Access Token and Secret`, esto nos dará nuestros dos ultimos tokens necesarios, guardalos junto a tu api_key, tu api_secret y tu bearer_token.
 
-¡Listo! localiza el archivo `configuration.py` en la carpeta `resources` y ejecutalo para configurar tu archivo `api_data.py` donde guardaremos los tokens.
+¡Listo! localiza el archivo `configuration.py` en la carpeta `resources` y ejecutalo para configurar tu archivo `api_data.py` donde guardaremos los tokens, al final del proceso deberías tener un archivo api_data.py similar a este:
+```
+api_key = "kQ2YqXaz2mVnaf4rEWM5BbaI0"
+api_secret = "ZMmRdQ5UyWJdM3meatcz1kfdyPbW31gJ2zXhHTV4qJ5F91n3X7"
+access_token = "15484682yUKs2a01987-eY8xVPBcANwMfBtAdnhaXmD1CuWzCm" 
+access_secret = "e8xXl4PS4MHcP4wq5WgJBAp01939B76mdEJI0YKCrk1Cb"
+```
 
 Si todo va bien, estarás listo para interactuar con la API de twitter y la librería, dentro de resources encontrarás varias funciones para entender como funciona la librería.
 
