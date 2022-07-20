@@ -75,7 +75,7 @@ access_token = "15484682yUKs2a01987-eY8xVPBcANwMfBtAdnhaXmD1CuWzCm"
 access_secret = "e8xXl4PS4MHcP4wq5WgJBAp01939B76mdEJI0YKCrk1Cb"
 ```
 
-Si todo va bien, estarás listo para interactuar con la API de twitter y la librería, dentro de resources encontrarás varias funciones para entender como funciona la librería.
+Si todo va bien, estarás listo para interactuar con la API de twitter y la librería, dentro de resources encontrarás varias funciones para entender como utilizar tweepy y la API.
 
 # Errores enviando tweets
 ## 187 - Status is a duplicate
