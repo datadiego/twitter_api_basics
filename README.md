@@ -8,7 +8,7 @@ Para comenzar a usar la API:
 - Guarda tus claves en un lugar seguro, lanza "configuracion.py" y sigue las instrucciones.
 - Si todo va bien, deberías estar listo para interactuar con la API 🙂
 
- La libreria contiene funciones para confogurar y autentificar tus credenciales o mandar tweets automatizados de manera simple y entender como funciona la API, una guía para crear y configurar tu cuenta de desarrollador en twitter y una clase (tweet_bot.py) con las siguientes funciones:
+ La libreria contiene funciones para configurar y autentificar tus credenciales o mandar tweets automatizados de manera simple y entender como funciona la API, una guía para crear y configurar tu cuenta de desarrollador en twitter y una clase (tweet_bot.py) con las siguientes funciones:
  
 - `authenticate(self, api_key, api_secret, access_token, access_secret)`: Verifica tus credenciales para interactuar con la API.
 - `show_info()`: muestra información sobre tu perfil.
